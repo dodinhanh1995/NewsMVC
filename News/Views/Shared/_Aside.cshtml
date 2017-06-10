@@ -1,0 +1,15 @@
+﻿<div class="col-lg-4 col-md-4 col-sm-4">
+    <aside class="right_content">
+        @{Html.RenderAction("_GetNiceOfWeek", "Index");}
+
+        @{Html.RenderAction("_GetRightAdveritse", "Index");}
+
+        <div class="single_sidebar wow fadeInDown">
+            <h2><span>Links</span></h2>
+            <ul>
+                <li><a href="@Url.Action("Index", "Login")">Đăng nhập</a></li>
+                <li><a>Liên hệ quảng cáo</a></li>
+            </ul>
+        </div>
+    </aside>
+</div>

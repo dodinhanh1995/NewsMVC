@@ -1,0 +1,9 @@
+﻿@model List<News.Areas.Admin.Models.EF.quangcao>
+
+@foreach (var item in Model)
+{
+<div class="single_sidebar wow fadeInDown">
+    <a class="sideAdd" href="@item.Url" title="@item.MoTa"><img src="~/Assets/upload/quangcao/@item.urlHinh" alt="@item.MoTa"></a>
+</div>
+}
+

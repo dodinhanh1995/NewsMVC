@@ -1,0 +1,15 @@
+﻿@model List<News.Areas.Admin.Models.EF.tin>
+<div class="single_sidebar">
+    <h2><span>BÀI VIẾT HAY TRONG TUẦN</span></h2>
+    <ul class="spost_nav">
+        @foreach (var item in Model)
+        {
+        <li>
+            <div class="media wow fadeInDown">
+                <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin" class="media-left"> <img alt="" src="~/Assets/upload/tintuc/@item.urlHinh"> </a>
+                <div class="media-body"> <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin" class="catg_title"> @item.TieuDe</a> </div>
+            </div>
+        </li>
+        }
+    </ul>
+</div>

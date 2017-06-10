@@ -1,0 +1,68 @@
+﻿@model IEnumerable<News.Areas.Admin.Models.EF.theloai>
+
+@{
+    ViewBag.Title = "Danh sách Thể loại";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Title {Danh sách Thể loại}
+
+<p>
+    <a href="@Url.Action("Create", "Category")" class="btn btn-default">
+        <i class="fa fa-plus"></i> Thêm mới
+    </a>
+</p>
+
+
+<table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idTL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTL_KhongDau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ThuTu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnHien)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idTL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTL)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenTL_KhongDau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ThuTu)
+                </td>
+                <td>
+                    @(item.AnHien == 1 ? "Active" : "Block")
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Category", new { id = item.idTL })" class="btn btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a href="@Url.Action("Delete", "Category", new { id = item.idTL })" onclick="return confirm('Bạn có chắc là muốn xóa không?')" class="btn btn-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

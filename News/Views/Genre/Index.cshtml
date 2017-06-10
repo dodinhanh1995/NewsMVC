@@ -1,0 +1,50 @@
+﻿@using News.Areas.Admin.Models.EF;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<tin>
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Tìm kiếm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            @foreach (var item in Model)
+            {
+                <div class="single_post_content">
+                    <ul class="business_catgnav">
+                        <li>
+                            <figure class="bsbig_fig wow fadeInDown">
+                                <figcaption> <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin">@item.TieuDe</a> </figcaption>
+
+                            </figure>
+                        </li>
+                    </ul>
+                    <ul class="spost_nav">
+                        <li>
+                            <div class="media wow fadeInDown">
+                                <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin" class="media-left"> <img alt="" src="~/Assets/upload/tintuc/@item.urlHinh"> </a>
+                                <div class="media-body"> <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin" class="catg_title"> @item.TomTat</a> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            }
+            Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/ @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+        </div>
+        @Html.Partial("_Aside")
+
+    </div>
+
+</section>
+
+

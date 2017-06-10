@@ -1,0 +1,7 @@
+﻿@model List<News.Areas.Admin.Models.EF.loaitin>
+<ul>
+    @foreach (var item in Model)
+	{
+    <li><a href="~/loai-tin/@item.Ten_KhongDau.ToLower()-@item.idLT">@item.Ten</a></li>
+    }
+</ul> 

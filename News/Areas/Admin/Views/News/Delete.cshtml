@@ -1,0 +1,121 @@
+﻿@model News.Areas.Admin.Models.EF.tin
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loaitin.Ten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loaitin.Ten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.theloai.TenTL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.theloai.TenTL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe_KhongDau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe_KhongDau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TomTat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TomTat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urlHinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urlHinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLanXem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLanXem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TinNoiBat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinNoiBat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnHien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnHien)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

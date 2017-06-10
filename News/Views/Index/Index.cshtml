@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    @{Html.RenderAction("_Slider", "Index");}
+
+
+
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                
+                @{Html.RenderAction("_GetLife", "Index");}
+
+                @{Html.RenderAction("_GetCultural", "Index");}
+
+                @{Html.RenderAction("_GetSport", "Index");}
+            </div>
+        </div>
+        
+        @Html.Partial("_Aside")
+
+    </div>
+</section>
+

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title | AnhDo News</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/li-scroller.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/jquery.fancybox.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="~/Assets/Client/css/style.css">
+    <!--[if lt IE 9]>
+    <script src="~/Assets/Client/js/html5shiv.min.js"></script>
+    <script src="~/Assets/Client/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    <div class="container">
+
+        @Html.Partial("_Header")
+
+
+        @{Html.RenderAction("_Nav", "Index");}
+        
+
+        @RenderBody()
+
+
+        @{Html.RenderAction("_LeftFooter", "Index");}
+        
+
+
+    </div>
+    <script src="~/Assets/Client/js/jquery.min.js"></script>
+    <script src="~/Assets/Client/js/wow.min.js"></script>
+    <script src="~/Assets/Client/js/bootstrap.min.js"></script>
+    <script src="~/Assets/Client/js/slick.min.js"></script>
+    <script src="~/Assets/Client/js/jquery.li-scroller.1.0.js"></script>
+    <script src="~/Assets/Client/js/jquery.newsTicker.min.js"></script>
+    <script src="~/Assets/Client/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Assets/Client/js/custom.js"></script>
+</body>
+</html>

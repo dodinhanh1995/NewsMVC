@@ -1,0 +1,15 @@
+﻿@model List<News.Areas.Admin.Models.EF.tin>
+<div class="single_post_content_left">
+    <ul class="business_catgnav">
+        @foreach (var item in Model)
+        {
+        <li>
+            <figure class="bsbig_fig  wow fadeInDown">
+                <a class="featured_img" href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin"> <img src="~/Assets/upload/tintuc/@item.urlHinh" alt=""> <span class="overlay"></span> </a>
+                <figcaption> <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin">@item.TieuDe</a> </figcaption>
+                <p>@item.TomTat</p>
+            </figure>
+        </li>
+        }
+    </ul>
+</div>

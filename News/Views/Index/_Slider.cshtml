@@ -1,0 +1,24 @@
+﻿@model List<News.Areas.Admin.Models.EF.tin>
+
+<section id="sliderSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="slick_slider">
+                @foreach (var item in Model)
+                {
+                    <div class="single_iteam">
+                        <a href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin"> <img src="~/Assets/upload/tintuc/@item.urlHinh" alt=""></a>
+                        <div class="slider_article">
+                            <h2><a class="slider_tittle" href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin">@item.TieuDe</a></h2>
+                            <p>@item.TomTat</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        @* Lastest Post *@
+
+        @{Html.RenderAction("_LastestNews", "Index");}
+    </div>
+</section>

@@ -1,0 +1,18 @@
+﻿@model List<News.Areas.Admin.Models.EF.theloai>
+
+<div class="col-lg-4 col-md-4 col-sm-4">
+    <div class="footer_widget wow fadeInDown">
+        <ul class="tag_nav">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a><strong>@item.TenTL</strong></a>
+                    @Html.Action("_subFooter", "Index", new { @theLoaiID = item.idTL })
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+

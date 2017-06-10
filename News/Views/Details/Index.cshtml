@@ -1,0 +1,54 @@
+﻿@model News.Areas.Admin.Models.EF.tin
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                <div class="single_page">
+                    <ol class="breadcrumb">
+                        <li><a href="@Url.Action("Index", "Index")">Home</a></li>
+                        @{Html.RenderAction("_GetType", "Details");}
+                    </ol>
+                    <h1>@Model.TieuDe</h1>
+                    <div class="post_commentbox"><span><i class="fa fa-calendar"></i>@Model.Ngay</span></div>
+                    <div class="single_page_content">
+                        @Html.Raw(Model.Content)
+                    </div>
+                    <div class="social_link">
+                        <ul class="sociallink_nav">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                    @{Html.RenderAction("_GetRelated", "Details", new { @id = @Model.idTin });}
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="nav-slit">
+            <a class="prev" href="#">
+                <span class="icon-wrap"><i class="fa fa-angle-left"></i></span>
+                <div>
+                    <h3>Lastest News AnhDo</h3>
+                    <img src="~/Assets/upload/quangcao/detail_left.jpg" alt="" />
+                </div>
+            </a> <a class="next" href="#">
+                <span class="icon-wrap"><i class="fa fa-angle-right"></i></span>
+                <div>
+                    <h3>Lastest News AnhDo</h3>
+                    <img src="~/Assets/upload/quangcao/detail_right.jpg" alt="" />
+                </div>
+            </a>
+        </nav>
+        @Html.Partial("_Aside")
+    </div>
+</section>
+

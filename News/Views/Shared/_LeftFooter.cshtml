@@ -1,0 +1,27 @@
+﻿@model List<News.Areas.Admin.Models.EF.theloai>
+<footer id="footer">
+    <div class="footer_top">
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="footer_widget wow fadeInDown">
+                    <ul class="tag_nav">
+                        @foreach (var item in Model)
+                        {
+                        <li><a><strong>@item.TenTL</strong></a>
+                            @Html.Action("_subFooter", "Index", new { @theLoaiID = item.idTL })
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            @{Html.RenderAction("_MiddleFooter", "Index");}
+
+            @{Html.RenderAction("_RightFooter", "Index");}
+        </div>
+    </div>
+    <div class="footer_bottom">
+        <p class="copyright">Copyright &copy; 2017 <a>AnhDo News</a></p>
+        <p class="developer">Developed By AnhDo</p>
+    </div>
+</footer>

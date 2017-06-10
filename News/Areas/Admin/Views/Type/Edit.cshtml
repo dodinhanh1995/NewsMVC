@@ -1,0 +1,90 @@
+﻿@model News.Areas.Admin.Models.EF.loaitin
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Title{ Chỉnh sửa loại tin }
+
+
+@using (Html.BeginForm("Edit", "Type", FormMethod.Post, new { @id = "demo-form2", @class = "form-horizontal form-label-left" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ten, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })*
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ten_KhongDau, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })*
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            @Html.EditorFor(model => model.Ten_KhongDau, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.AnHien, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div id="gender" class="btn-group" data-toggle="buttons">
+                @if (Model.AnHien == 0)
+                {
+                    <label class="btn btn-default active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        @Html.RadioButtonFor(model => model.AnHien, 0, new { @checked = true })&nbsp; Block &nbsp;
+                    </label>
+                    <label class="btn btn-default" data-toggle-class=" btn-primary" data-toggle-passive-class="btn-default">
+                        @Html.RadioButtonFor(model => model.AnHien, 1) Active
+                    </label>
+                }
+                else
+                {
+                    <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                        @Html.RadioButtonFor(model => model.AnHien, 0)&nbsp; Block &nbsp;
+                    </label>
+                    <label class="btn btn-default active" data-toggle-class=" btn-primary" data-toggle-passive-class="btn-default">
+                        @Html.RadioButtonFor(model => model.AnHien, 1, new { @checked = true }) Active
+                    </label>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ThuTu, htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })*
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            @Html.EditorFor(model => model.ThuTu, new { htmlAttributes = new { @class = "form-control col-md-7 col-xs-12" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.idTL, "Mã thể loại", htmlAttributes: new { @class = "control-label col-md-3 col-sm-3 col-xs-12" })*
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            @Html.DropDownList("idTL", null, htmlAttributes: new { @class = "form-control col-md-7 col-xs-12" })
+            @Html.ValidationMessageFor(model => model.idTL, null, new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+
+
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+            <button type="submit" class="btn btn-app"><i class="fa fa-save"></i> Save</button>
+            <button type="reset" class="btn btn-app"><i class="fa fa-undo"></i> Hủy bỏ</button>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index")"><i class="fa fa-backward"></i> Back</a>
+</div>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

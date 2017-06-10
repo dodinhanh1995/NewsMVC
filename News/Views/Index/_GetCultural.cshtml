@@ -1,0 +1,14 @@
+﻿@model List<News.Areas.Admin.Models.EF.tin>
+<div class="single_post_content">
+    <h2><span>VĂN HÓA</span></h2>
+    <ul class="photograph_nav  wow fadeInDown">
+        @foreach (var item in Model)
+        {        
+        <li>
+            <div class="photo_grid">
+                <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="~/tin-tuc/@item.TieuDe_KhongDau.ToLower()-@item.idTin" title="@item.TieuDe"><img src="~/Assets/upload/tintuc/@item.urlHinh" alt="" /></a> </figure>
+            </div>
+        </li>
+        }
+    </ul>
+</div>

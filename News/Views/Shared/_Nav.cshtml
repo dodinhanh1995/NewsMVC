@@ -1,0 +1,29 @@
+﻿@model List<News.Areas.Admin.Models.EF.theloai>
+<section id="navArea">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav main_nav">
+
+                <li class="active"><a href="~/"><span class="fa fa-home desktop-home"></span><span class="mobile-show"></span></a></li>
+                @foreach (var item in Model)
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@item.TenTL</a>
+                        @Html.Action("_subNav", "Index", new { @theLoaiID = item.idTL })
+                    </li>
+                }
+                <li>
+                    <a>
+                        @using (Html.BeginForm("Index", "Search", FormMethod.Get))
+                        {
+                            @Html.TextBox("s", ViewBag.CurrentFilter as string, htmlAttributes: new {@required="required", @placeholder="Nhập từ khóa cần tìm", @class = "form-control", @style = "margin-top:8px" })
+                        }
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
